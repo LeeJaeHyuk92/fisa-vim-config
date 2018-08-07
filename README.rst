@@ -7,4 +7,4 @@ Installation instructions and docs `here <http://fisadev.github.io/fisa-vim-conf
 
 For Python 2.7
 
-You install vim-nox-py27 (sudo apt-get install vim-nox-py27)
+Install vim-nox-py27 (sudo apt-get install vim-nox-py27)
