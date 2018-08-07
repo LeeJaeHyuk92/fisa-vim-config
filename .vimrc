@@ -324,6 +324,8 @@ let g:jedi#usages_command = ',o'
 let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 nmap ,D :tab split<CR>:call jedi#goto()<CR>
+" Python 2.7 & sudo apt-get install vim-nox-py2
+let g:jedi#force_py_version = '2.7'
 
 " NeoComplCache ------------------------------
 
