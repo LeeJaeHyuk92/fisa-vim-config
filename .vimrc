@@ -1,4 +1,5 @@
 " Fisa-vim-config
+" modified by jaehyuk
 " http://fisadev.github.io/fisa-vim-config/
 " version: 8.3.1
 
@@ -9,8 +10,8 @@
 let vim_plug_just_installed = 0
 let vim_plug_path = expand('~/.vim/autoload/plug.vim')
 if !filereadable(vim_plug_path)
-    echo "Installing Vim-plug..."
-    echo ""
+echo "Installing Vim-plug..."
+echo ""
     silent !mkdir -p ~/.vim/autoload
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     let vim_plug_just_installed = 1
@@ -112,6 +113,8 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/Wombat'
 " Yank history navigation
 Plug 'vim-scripts/YankRing.vim'
+" Super tab
+Plug 'ervandew/supertab'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -136,10 +139,11 @@ filetype plugin on
 filetype indent on
 
 " tabs and spaces handling
+set smarttab
 set expandtab
 set tabstop=4
-set softtabstop=4
 set shiftwidth=4
+set autoindent
 
 " tab length exceptions on some file types
 autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
@@ -248,6 +252,11 @@ map <F4> :TagbarToggle<CR>
 " autofocus on tagbar open
 let g:tagbar_autofocus = 1
 
+au BufWinLeave *.py mkview
+au BufWinEnter *.py silent loadview
+au BufWinLeave *.c mkview
+au BufWinEnter *.c silent loadview
+
 " NERDTree ----------------------------- 
 
 " toggle nerdtree display
@@ -324,8 +333,10 @@ let g:jedi#usages_command = ',o'
 let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 nmap ,D :tab split<CR>:call jedi#goto()<CR>
-" Python 2.7 & sudo apt-get install vim-nox-py2
+" Python 2.7
 let g:jedi#force_py_version = '2.7'
+" popup
+let g:jedi#popup_select_first = 0
 
 " NeoComplCache ------------------------------
 
@@ -394,9 +405,11 @@ let g:choosewin_overlay_enable = 1
 
 " Airline ------------------------------
 
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline_theme = 'bubblegum'
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#formatter='unique_tail'
 
 " to use fancy symbols for airline, uncomment the following lines and use a
 " patched font (more info on the README.rst)
@@ -410,3 +423,13 @@ let g:airline#extensions#whitespace#enabled = 0
 "let g:airline_symbols.branch = '⭠'
 "let g:airline_symbols.readonly = '⭤'
 "let g:airline_symbols.linenr = '⭡'
+
+" clipboard
+set clipboard=unnamed
+
+" mouse on normal mode
+" set mouse=a
+
+" super tab
+let g:SuperTabMappingForward = '<s-tab>'
+let g:SuperTabMappingBackward = '<tab>'
