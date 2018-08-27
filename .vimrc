@@ -1,5 +1,4 @@
 " Fisa-vim-config
-" modified by jaehyuk
 " http://fisadev.github.io/fisa-vim-config/
 " version: 8.3.1
 
@@ -115,6 +114,8 @@ Plug 'vim-scripts/Wombat'
 Plug 'vim-scripts/YankRing.vim'
 " Super tab
 Plug 'ervandew/supertab'
+" pydocstring jaehyuk
+Plug 'LeeJaeHyuk92/vim-pydocstring'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
