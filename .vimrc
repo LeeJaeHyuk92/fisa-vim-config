@@ -114,8 +114,8 @@ Plug 'vim-scripts/Wombat'
 Plug 'vim-scripts/YankRing.vim'
 " Super tab
 Plug 'ervandew/supertab'
-" pydocstring jaehyuk
-Plug 'LeeJaeHyuk92/vim-pydocstring'
+" pydocstring
+Plug 'heavenshell/vim-pydocstring'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -432,5 +432,6 @@ set clipboard=unnamed
 " set mouse=a
 
 " super tab
-let g:SuperTabMappingForward = '<s-tab>'
-let g:SuperTabMappingBackward = '<tab>'
+let g:SuperTabDefaultCompletionType="context"
+" Snippets
+imap <tab> <Plug>snipMateTrigger
