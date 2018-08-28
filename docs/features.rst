@@ -52,6 +52,10 @@ Most important features include:
 
   The mappings starting with the ``t`` letter work only on command mode, but the mappings with ``Ctrl-Shift`` work on both, command and insert mode.
 
+* **Easy buffer** 
+  * ``Ctrl-Shift-Right`` = bnext.
+  * ``Ctrl-Shift-Left`` = bprev.
+  
 * **Easy window navigation** using ``Alt-arrows`` keys.
 
 * Some vim goodies enabled by default:
