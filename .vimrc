@@ -171,10 +171,12 @@ map tp :tabp<CR>
 map tm :tabm 
 map tt :tabnew 
 map ts :tab split<CR>
-map <C-S-Right> :tabn<CR>
-imap <C-S-Right> <ESC>:tabn<CR>
-map <C-S-Left> :tabp<CR>
-imap <C-S-Left> <ESC>:tabp<CR>
+
+" buffer
+map <C-S-Right> :bn<CR>
+imap <C-S-Right> <ESC>:bp<CR>
+map <C-S-Left> :bn<CR>
+imap <C-S-Left> <ESC>:bn<CR>
 
 " navigate windows with meta+arrows
 map <M-Right> <c-w>l
@@ -434,4 +436,4 @@ set clipboard=unnamed
 " super tab
 let g:SuperTabDefaultCompletionType="context"
 " Snippets
-imap <tab> <Plug>snipMateTrigger
+imap <silent> <tab> <Plug>snipMateTrigger
